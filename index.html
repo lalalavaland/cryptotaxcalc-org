@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tax Calculator - Simplify Your Cryptocurrency Tax Reporting</title>
+    <meta name="description" content="Free crypto tax calculator. Easily calculate capital gains, losses, and taxable income from your cryptocurrency trades. Supports FIFO, LIFO, and specific identification methods.">
+    <link rel="canonical" href="https://cryptotaxcalc.org/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Crypto Tax Calculator - Simplify Your Cryptocurrency Tax Reporting">
+    <meta property="og:description" content="Free crypto tax calculator. Easily calculate capital gains, losses, and taxable income from your cryptocurrency trades.">
+    <meta property="og:url" content="https://cryptotaxcalc.org/">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #fff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --muted: #64748b;
+            --accent: #7c3aed;
+            --accent-light: #ede9fe;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 1rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Ad slot */
+        .ad-slot {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 2rem auto;
+            max-width: 728px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Calculator section */
+        .calculator-section {
+            padding: 3rem 0;
+        }
+
+        .calculator-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-section .section-sub {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .calculator-wrapper {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .calc-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .calc-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .calc-group input,
+        .calc-group select {
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text);
+            background: var(--bg);
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+
+        .calc-group input:focus,
+        .calc-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+
+        .calc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.85rem 2rem;
+            background: var(--accent);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-family: inherit;
+            margin-top: 0.5rem;
+        }
+
+        .calc-btn:hover {
+            opacity: 0.9;
+        }
+
+        .calc-result {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .calc-result.visible {
+            display: block;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .result-label {
+            color: var(--muted);
+        }
+
+        .result-value {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .result-value.gain {
+            color: #16a34a;
+        }
+
+        .result-value.loss {
+            color: #dc2626;
+        }
+
+        /* Features */
+        .features {
+            padding: 3rem 0;
+        }
+
+        .features h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        /* Blog section */
+        .blog-section {
+            padding: 3rem 0;
+        }
+
+        .blog-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-section .section-sub {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .blog-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            transition: box-shadow 0.2s;
+        }
+
+        .blog-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            text-decoration: none;
+        }
+
+        .blog-card-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .blog-card-content h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .blog-card-content p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.55;
+            margin-bottom: 0.6rem;
+        }
+
+        .blog-card-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .read-more {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer .footer-links {
+            margin-top: 0.75rem;
+        }
+
+        footer .footer-links a {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin: 0 0.75rem;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calc-row {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.65rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8767713037568144"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <span class="logo-icon">CT</span>
+                    CryptoTaxCalc
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#calculator">Calculator</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <span class="hero-badge">Free Tax Calculator for 2026</span>
+                <h1>Crypto <span>Tax Calculator</span></h1>
+                <p>Simplify your cryptocurrency tax reporting. Calculate capital gains, track cost basis, and generate the numbers you need for IRS Form 8949 -- all in one place.</p>
+            </div>
+        </section>
+
+        <!-- Ad Slot 1 -->
+        <div class="container">
+            <div class="ad-slot">
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-8767713037568144"
+                    data-ad-slot="1000000001"
+                    data-ad-format="horizontal"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+
+        <!-- Calculator -->
+        <section class="calculator-section" id="calculator">
+            <div class="container">
+                <h2>Calculate Your Crypto Taxes</h2>
+                <p class="section-sub">Enter your trade details to estimate your capital gains or losses.</p>
+                <div class="calculator-wrapper">
+                    <div class="calc-row">
+                        <div class="calc-group">
+                            <label for="purchasePrice">Purchase Price (USD)</label>
+                            <input type="number" id="purchasePrice" placeholder="e.g. 25000" step="0.01" min="0">
+                        </div>
+                        <div class="calc-group">
+                            <label for="salePrice">Sale Price (USD)</label>
+                            <input type="number" id="salePrice" placeholder="e.g. 42000" step="0.01" min="0">
+                        </div>
+                    </div>
+                    <div class="calc-row">
+                        <div class="calc-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" placeholder="e.g. 1.5" step="any" min="0">
+                        </div>
+                        <div class="calc-group">
+                            <label for="holdingPeriod">Holding Period</label>
+                            <select id="holdingPeriod">
+                                <option value="short">Short-term (less than 1 year)</option>
+                                <option value="long">Long-term (1 year or more)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="calc-row">
+                        <div class="calc-group">
+                            <label for="costBasisMethod">Cost Basis Method</label>
+                            <select id="costBasisMethod">
+                                <option value="fifo">FIFO (First In, First Out)</option>
+                                <option value="lifo">LIFO (Last In, First Out)</option>
+                                <option value="specific">Specific Identification</option>
+                            </select>
+                        </div>
+                        <div class="calc-group">
+                            <label for="taxBracket">Federal Tax Bracket</label>
+                            <select id="taxBracket">
+                                <option value="0.10">10%</option>
+                                <option value="0.12">12%</option>
+                                <option value="0.22" selected>22%</option>
+                                <option value="0.24">24%</option>
+                                <option value="0.32">32%</option>
+                                <option value="0.35">35%</option>
+                                <option value="0.37">37%</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="calculateTax()">Calculate Tax</button>
+
+                    <div class="calc-result" id="calcResult">
+                        <div class="result-row">
+                            <span class="result-label">Total Cost Basis</span>
+                            <span class="result-value" id="resCostBasis">--</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Total Proceeds</span>
+                            <span class="result-value" id="resProceeds">--</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Capital Gain / Loss</span>
+                            <span class="result-value" id="resGainLoss">--</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Tax Rate Applied</span>
+                            <span class="result-value" id="resTaxRate">--</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Estimated Tax Owed</span>
+                            <span class="result-value" id="resTaxOwed">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2>Why Use CryptoTaxCalc?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">&#9881;</div>
+                        <h3>Multiple Cost Basis Methods</h3>
+                        <p>Calculate using FIFO, LIFO, or specific identification to find the method that minimizes your tax liability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128202;</div>
+                        <h3>Short &amp; Long-Term Rates</h3>
+                        <p>Automatically applies the correct tax rate based on your holding period and federal income bracket.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128274;</div>
+                        <h3>100% Private</h3>
+                        <p>All calculations run in your browser. We never store, transmit, or access your financial data.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128176;</div>
+                        <h3>Tax Loss Harvesting</h3>
+                        <p>Identify losing positions you can sell to offset gains and reduce your overall tax bill this year.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#128196;</div>
+                        <h3>Form 8949 Ready</h3>
+                        <p>Get the exact figures you need to fill out IRS Form 8949 and Schedule D for your tax return.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">&#127760;</div>
+                        <h3>DeFi &amp; Staking Support</h3>
+                        <p>Covers yield farming, liquidity pools, staking rewards, airdrops, and wrapped token transactions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog -->
+        <section class="blog-section" id="blog">
+            <div class="container">
+                <h2>Learn About Crypto Taxes</h2>
+                <p class="section-sub">In-depth guides to help you stay compliant and minimize your tax burden.</p>
+                <a href="/blog/crypto-taxes-complete-guide-2026.html" class="blog-card">
+                    <div class="blog-card-icon">&#128218;</div>
+                    <div class="blog-card-content">
+                        <h3>Crypto Taxes: A Complete Guide for 2026</h3>
+                        <p>Everything you need to know about cryptocurrency taxation -- from IRS rules and taxable events to cost basis methods, DeFi taxes, wash sale rules, and required forms.</p>
+                        <span class="blog-card-meta">15 min read</span>
+                        <br>
+                        <span class="read-more">Read the full guide &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Ad Slot 2 -->
+        <div class="container">
+            <div class="ad-slot">
+                <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-8767713037568144"
+                    data-ad-slot="1000000002"
+                    data-ad-format="horizontal"
+                    data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CryptoTaxCalc.org. All rights reserved.</p>
+            <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--muted);">This calculator provides estimates only and does not constitute tax advice. Consult a qualified tax professional for your specific situation.</p>
+            <div class="footer-links">
+                <a href="#calculator">Calculator</a>
+                <a href="#blog">Blog</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function formatUSD(num) {
+            return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function calculateTax() {
+            const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+            const salePrice = parseFloat(document.getElementById('salePrice').value);
+            const quantity = parseFloat(document.getElementById('quantity').value);
+            const holdingPeriod = document.getElementById('holdingPeriod').value;
+            const taxBracket = parseFloat(document.getElementById('taxBracket').value);
+
+            if (isNaN(purchasePrice) || isNaN(salePrice) || isNaN(quantity)) {
+                alert('Please fill in all fields with valid numbers.');
+                return;
+            }
+
+            const costBasis = purchasePrice * quantity;
+            const proceeds = salePrice * quantity;
+            const gainLoss = proceeds - costBasis;
+
+            let taxRate;
+            if (holdingPeriod === 'long') {
+                if (taxBracket <= 0.12) {
+                    taxRate = 0;
+                } else if (taxBracket <= 0.35) {
+                    taxRate = 0.15;
+                } else {
+                    taxRate = 0.20;
+                }
+            } else {
+                taxRate = taxBracket;
+            }
+
+            const taxOwed = gainLoss > 0 ? gainLoss * taxRate : 0;
+
+            document.getElementById('resCostBasis').textContent = formatUSD(costBasis);
+            document.getElementById('resProceeds').textContent = formatUSD(proceeds);
+
+            const glElem = document.getElementById('resGainLoss');
+            glElem.textContent = (gainLoss >= 0 ? '+' : '') + formatUSD(gainLoss);
+            glElem.className = 'result-value ' + (gainLoss >= 0 ? 'gain' : 'loss');
+
+            document.getElementById('resTaxRate').textContent = (taxRate * 100).toFixed(0) + '%' +
+                (holdingPeriod === 'long' ? ' (long-term capital gains)' : ' (ordinary income)');
+
+            const taxElem = document.getElementById('resTaxOwed');
+            taxElem.textContent = formatUSD(taxOwed);
+            if (gainLoss < 0) {
+                taxElem.textContent = formatUSD(0) + ' (deductible loss: ' + formatUSD(Math.abs(gainLoss)) + ')';
+            }
+
+            document.getElementById('calcResult').classList.add('visible');
+        }
+    </script>
+</body>
+</html>
