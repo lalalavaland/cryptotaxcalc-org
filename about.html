@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CryptoTaxCalc.org | Free Crypto Tax Estimation Tool</title>
+    <meta name="description" content="About CryptoTaxCalc.org -- a free cryptocurrency tax estimation tool. Our mission is to simplify crypto tax reporting for everyone with accurate, privacy-first calculations.">
+    <link rel="canonical" href="https://cryptotaxcalc.org/about.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="About CryptoTaxCalc.org | Free Crypto Tax Estimation Tool">
+    <meta property="og:description" content="About CryptoTaxCalc.org -- a free cryptocurrency tax estimation tool. Our mission is to simplify crypto tax reporting for everyone.">
+    <meta property="og:url" content="https://cryptotaxcalc.org/about.html">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #fff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --muted: #64748b;
+            --accent: #7c3aed;
+            --accent-light: #ede9fe;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Article */
+        .article-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--muted);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .article-header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Ad slot */
+        .ad-slot {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 2rem auto;
+            max-width: 728px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Article content */
+        .article-body {
+            padding-bottom: 3rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.15rem;
+            color: var(--text);
+        }
+
+        .article-body ul,
+        .article-body ol {
+            margin-bottom: 1.15rem;
+            padding-left: 1.75rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body strong {
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .info-box strong {
+            color: var(--accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .cta-box {
+            background: var(--surface);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+
+        .cta-box h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .cta-box p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer .footer-links {
+            margin-top: 0.75rem;
+        }
+
+        footer .footer-links a {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin: 0 0.75rem;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.65rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8767713037568144"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <span class="logo-icon">CT</span>
+                    CryptoTaxCalc
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/#calculator">Calculator</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <div class="article-container">
+                <div class="article-header">
+                    <div class="breadcrumb">
+                        <a href="/">Home</a> &rsaquo; About
+                    </div>
+                    <h1>About CryptoTaxCalc.org</h1>
+                    <div class="article-meta">Free Crypto Tax Estimation Tool</div>
+                </div>
+
+                <!-- Ad Slot -->
+                <div class="ad-slot">
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8767713037568144"
+                        data-ad-slot="5000000001"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+
+                <div class="article-body">
+                    <h2>Our Mission</h2>
+                    <p>CryptoTaxCalc.org was built with a single goal: to make cryptocurrency tax estimation simple, accessible, and free for everyone. We believe that understanding your tax obligations should not require expensive software or a finance degree. Whether you made one trade or a hundred, you deserve a straightforward way to estimate your capital gains and tax liability.</p>
+
+                    <p>Cryptocurrency adoption continues to grow rapidly, but tax compliance has not kept pace. Millions of crypto holders are unsure how their trades are taxed, which forms to file, or how cost basis methods affect their bottom line. CryptoTaxCalc.org exists to bridge that gap with a clean, fast, and private tool that anyone can use.</p>
+
+                    <h2>What We Offer</h2>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">&#9881;</div>
+                            <h3>Free Calculator</h3>
+                            <p>Estimate your crypto capital gains and losses using FIFO, LIFO, or specific identification methods -- all at no cost.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128274;</div>
+                            <h3>100% Private</h3>
+                            <p>Every calculation runs entirely in your browser. We never collect, store, or transmit your financial data.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128218;</div>
+                            <h3>Educational Content</h3>
+                            <p>In-depth guides covering IRS rules, DeFi taxes, wash sale rules, tax loss harvesting, and more.</p>
+                        </div>
+                    </div>
+
+                    <h2>How the Calculator Works</h2>
+                    <p>Our crypto tax calculator is a client-side application that performs all computations directly in your web browser using JavaScript. When you enter your trade details -- purchase price, sale price, quantity, holding period, cost basis method, and tax bracket -- the calculator estimates your capital gain or loss and applies the appropriate federal tax rate.</p>
+
+                    <p>For short-term holdings (less than one year), your ordinary income tax rate is applied. For long-term holdings (one year or more), the preferential long-term capital gains rates of 0%, 15%, or 20% are used based on your tax bracket. The calculator supports three cost basis methods:</p>
+
+                    <ul>
+                        <li><strong>FIFO (First In, First Out):</strong> The default IRS method. Assumes your earliest-purchased units are sold first.</li>
+                        <li><strong>LIFO (Last In, First Out):</strong> Assumes your most recently acquired units are sold first. Often results in smaller gains in a rising market.</li>
+                        <li><strong>Specific Identification:</strong> Allows you to choose exactly which units to sell, giving you the most control over your tax outcome.</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <p><strong>Privacy commitment:</strong> Your financial data never leaves your device. We have no server-side processing, no databases storing trade information, and no tracking of calculator inputs. Your privacy is not a feature -- it is our foundation.</p>
+                    </div>
+
+                    <h2>Why Crypto Tax Education Matters</h2>
+                    <p>The IRS treats cryptocurrency as property, which means every sale, trade, or spending event can trigger a taxable event. Since 2025, the wash sale rule now applies to digital assets, and beginning with the 2026 tax year, exchanges are required to issue Form 1099-DA to both taxpayers and the IRS. The era of unreported crypto activity is over.</p>
+
+                    <p>We publish detailed, well-researched guides to help you understand the rules and make informed decisions. Our content covers topics including:</p>
+
+                    <ul>
+                        <li>How the IRS classifies and taxes cryptocurrency</li>
+                        <li>The difference between short-term and long-term capital gains rates</li>
+                        <li>How to choose the right cost basis method for your situation</li>
+                        <li>Tax implications of DeFi activities like staking, yield farming, and liquidity pools</li>
+                        <li>Tax loss harvesting strategies and the 2026 wash sale rules</li>
+                        <li>Required tax forms: Form 8949, Schedule D, Form 1099-DA</li>
+                        <li>Record-keeping best practices</li>
+                    </ul>
+
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li><strong>Accessibility:</strong> Tax tools should be free. We support our site through non-intrusive advertising so the calculator and educational content remain available to everyone at no cost.</li>
+                        <li><strong>Privacy:</strong> We will never collect or monetize your financial data. Period.</li>
+                        <li><strong>Accuracy:</strong> We research tax regulations thoroughly and update our content as laws change. Our guides cite IRS notices, revenue rulings, and established tax principles.</li>
+                        <li><strong>Transparency:</strong> We clearly state that our tool provides estimates only and that users should consult a qualified tax professional for advice specific to their situation.</li>
+                    </ul>
+
+                    <h2>Disclaimer</h2>
+                    <p>CryptoTaxCalc.org is an informational resource and estimation tool. We are not tax advisors, accountants, or attorneys. The calculator provides estimates based on the inputs you provide and simplified tax rate assumptions. It does not account for state taxes, the Net Investment Income Tax, Alternative Minimum Tax, or other factors that may affect your actual liability. Always consult a qualified tax professional for personalized advice.</p>
+
+                    <div class="cta-box">
+                        <h3>Try the Calculator</h3>
+                        <p>Estimate your crypto capital gains and tax liability in seconds -- free and private.</p>
+                        <a href="/#calculator" class="cta-btn">Open the Calculator</a>
+                    </div>
+
+                    <h2>Contact</h2>
+                    <p>Have questions, feedback, or suggestions? We would love to hear from you. Reach out to us at <a href="mailto:contact@cryptotaxcalc.org">contact@cryptotaxcalc.org</a> or visit our <a href="/contact.html">contact page</a>.</p>
+                </div>
+
+                <!-- Ad Slot 2 -->
+                <div class="ad-slot">
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8767713037568144"
+                        data-ad-slot="5000000002"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CryptoTaxCalc.org. All rights reserved.</p>
+            <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--muted);">This calculator provides estimates only and does not constitute tax advice. Consult a qualified tax professional for your specific situation.</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#calculator">Calculator</a>
+                <a href="/#blog">Blog</a>
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms of Service</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Tax Guide 2026: How to Report NFT Gains, Losses, and Royalties | CryptoTaxCalc</title>
+    <meta name="description" content="Complete 2026 guide to NFT taxes. Learn how NFTs are taxed as capital gains, how to report buying, selling, and trading NFTs, handle creator royalties, gas fees, airdrops, free mints, and more on Schedule D and Form 8949.">
+    <link rel="canonical" href="https://cryptotaxcalc.org/blog/nft-tax-guide-2026.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="NFT Tax Guide 2026: How to Report NFT Gains, Losses, and Royalties">
+    <meta property="og:description" content="Complete 2026 guide to NFT taxes. Learn how to report NFT capital gains, losses, creator royalties, gas fees, airdrops, and more.">
+    <meta property="og:url" content="https://cryptotaxcalc.org/blog/nft-tax-guide-2026.html">
+    <meta property="og:type" content="article">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #fff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --muted: #64748b;
+            --accent: #7c3aed;
+            --accent-light: #ede9fe;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Article */
+        .article-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--muted);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .article-header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Ad slot */
+        .ad-slot {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 2rem auto;
+            max-width: 728px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Article content */
+        .article-body {
+            padding-bottom: 3rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.15rem;
+            color: var(--text);
+        }
+
+        .article-body ul,
+        .article-body ol {
+            margin-bottom: 1.15rem;
+            padding-left: 1.75rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body strong {
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .info-box strong {
+            color: var(--accent);
+        }
+
+        .tax-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tax-table th,
+        .tax-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.92rem;
+        }
+
+        .tax-table th {
+            background: var(--bg);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: var(--muted);
+        }
+
+        .tax-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cta-box {
+            background: var(--surface);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+
+        .cta-box h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .cta-box p {
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer .footer-links {
+            margin-top: 0.75rem;
+        }
+
+        footer .footer-links a {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin: 0 0.75rem;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.65rem;
+            }
+
+            .tax-table {
+                font-size: 0.85rem;
+            }
+
+            .tax-table th,
+            .tax-table td {
+                padding: 0.5rem 0.65rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8767713037568144"
+        crossorigin="anonymous"></script>
+
+    <!-- JSON-LD Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "NFT Tax Guide 2026: How to Report NFT Gains, Losses, and Royalties",
+        "description": "Complete 2026 guide to NFT taxes. Learn how NFTs are taxed as capital gains, how to report buying, selling, and trading NFTs, handle creator royalties, gas fees, airdrops, free mints, and more on Schedule D and Form 8949.",
+        "datePublished": "2026-02-11",
+        "dateModified": "2026-02-11",
+        "author": {
+            "@type": "Organization",
+            "name": "CryptoTaxCalc",
+            "url": "https://cryptotaxcalc.org"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CryptoTaxCalc",
+            "url": "https://cryptotaxcalc.org"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://cryptotaxcalc.org/blog/nft-tax-guide-2026.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <span class="logo-icon">CT</span>
+                    CryptoTaxCalc
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/#calculator">Calculator</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <div class="article-container">
+                <div class="article-header">
+                    <div class="breadcrumb">
+                        <a href="/">Home</a> &rsaquo; <a href="/#blog">Blog</a> &rsaquo; NFT Tax Guide 2026
+                    </div>
+                    <h1>NFT Tax Guide 2026: How to Report NFT Gains, Losses, and Royalties</h1>
+                    <div class="article-meta">Published February 11, 2026 &middot; 14 min read</div>
+                </div>
+
+                <!-- Ad Slot 1 -->
+                <div class="ad-slot">
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8767713037568144"
+                        data-ad-slot="7000000001"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+
+                <div class="article-body">
+                    <p>Non-fungible tokens (NFTs) have become a significant part of the digital asset landscape, and with growing IRS scrutiny in the 2026 tax year, understanding exactly how NFTs are taxed is essential for collectors, traders, and creators alike. Whether you bought a profile picture NFT, flipped digital art for a profit, earned royalties as an NFT creator, or received a free mint through an airdrop, each of these activities can trigger a taxable event that must be reported on your federal tax return.</p>
+
+                    <p>This comprehensive guide covers every major NFT tax scenario for the 2026 tax year, including capital gains and losses from buying and selling NFTs, how creator royalties are treated as income, the role of gas fees in your cost basis, the tax implications of airdrops and free mints, wash sale considerations, record-keeping best practices, and step-by-step instructions for reporting on Schedule D and Form 8949.</p>
+
+                    <h2>How Are NFTs Taxed? The Basics</h2>
+
+                    <p>The IRS treats NFTs as property, just like other digital assets such as Bitcoin and Ethereum. This means that any time you sell, trade, or otherwise dispose of an NFT, you may realize a capital gain or capital loss. The amount of gain or loss depends on the difference between your cost basis (what you paid for the NFT, including gas fees) and the fair market value at the time of disposal.</p>
+
+                    <p>In addition, the IRS issued <strong>Notice 2023-27</strong> which provided initial guidance specifically on NFTs and indicated that certain NFTs may be classified as "collectibles" under Section 408(m) of the tax code. Collectibles are subject to a maximum long-term capital gains rate of <strong>28%</strong>, which is higher than the standard 15% or 20% long-term capital gains rates that apply to most other capital assets. This classification depends on whether the underlying asset the NFT represents qualifies as a collectible (for example, digital art, trading cards, or similar items).</p>
+
+                    <div class="info-box">
+                        <p><strong>Key distinction:</strong> If your NFT is classified as a collectible, long-term gains (held over one year) are taxed at up to 28%. If it is not classified as a collectible, the standard long-term capital gains rates of 0%, 15%, or 20% apply. Short-term gains (held one year or less) are always taxed at your ordinary income tax rate regardless of classification.</p>
+                    </div>
+
+                    <h2>Buying an NFT: Tax Implications</h2>
+
+                    <p>Purchasing an NFT with cryptocurrency is itself a taxable event. When you use ETH, SOL, or any other cryptocurrency to buy an NFT, you are disposing of that cryptocurrency. If the crypto you spent has appreciated in value since you acquired it, you realize a capital gain on the crypto at the time of purchase.</p>
+
+                    <p><strong>Example:</strong> You purchased 1 ETH for $1,500 in January 2025. In June 2026, when ETH is worth $3,200, you use that 1 ETH to buy an NFT. You have realized a <strong>$1,700 capital gain</strong> on the ETH ($3,200 fair market value minus $1,500 cost basis). Your cost basis in the new NFT is $3,200 (the fair market value of the ETH at the time of purchase), plus any gas fees you paid for the transaction.</p>
+
+                    <p>If you purchase an NFT with fiat currency (USD) through a platform that accepts credit card or bank payments, no taxable event occurs at the time of purchase. Your cost basis in the NFT is simply the amount you paid in fiat plus any fees.</p>
+
+                    <h2>Selling an NFT: Capital Gains and Losses</h2>
+
+                    <p>When you sell an NFT, you calculate your capital gain or loss by subtracting your cost basis from the sale proceeds. The holding period determines whether the gain is short-term or long-term.</p>
+
+                    <table class="tax-table">
+                        <thead>
+                            <tr>
+                                <th>Holding Period</th>
+                                <th>Classification</th>
+                                <th>Tax Rate (Non-Collectible)</th>
+                                <th>Tax Rate (Collectible NFT)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 year or less</td>
+                                <td>Short-term capital gain</td>
+                                <td>10% - 37% (ordinary income rate)</td>
+                                <td>10% - 37% (ordinary income rate)</td>
+                            </tr>
+                            <tr>
+                                <td>More than 1 year</td>
+                                <td>Long-term capital gain</td>
+                                <td>0%, 15%, or 20%</td>
+                                <td>Up to 28%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>Example:</strong> You bought an NFT for a cost basis of $2,000 (including gas fees) in March 2025. You sell it in August 2026 for $5,500 (after marketplace fees). Your capital gain is $3,500. Because you held the NFT for more than one year, this is a long-term capital gain. If the NFT is classified as a collectible, it is taxed at up to 28%. If not, the standard long-term rate applies.</p>
+
+                    <p>If you sell an NFT for less than your cost basis, you realize a capital loss. Capital losses can offset capital gains dollar-for-dollar, and up to $3,000 of net capital losses can be deducted against ordinary income each year, with the remainder carried forward to future years.</p>
+
+                    <h2>Trading NFTs: NFT-for-NFT Swaps</h2>
+
+                    <p>Trading one NFT directly for another NFT is a taxable event. The IRS considers this a disposal of the first NFT and an acquisition of the second. You must calculate the fair market value of the NFT you received at the time of the trade and compare it against the cost basis of the NFT you gave up.</p>
+
+                    <p><strong>Example:</strong> You trade an NFT with a cost basis of $1,000 for another NFT that has a fair market value of $3,000 at the time of the trade. You realize a $2,000 capital gain on the first NFT. Your cost basis in the new NFT is $3,000.</p>
+
+                    <div class="info-box">
+                        <p><strong>Important:</strong> Like-kind exchanges under Section 1031 do not apply to NFTs or other digital assets. Every NFT-for-NFT trade is a fully taxable event. There is no deferral available.</p>
+                    </div>
+
+                    <h2>NFT Creator Royalties: Taxed as Ordinary Income</h2>
+
+                    <p>If you are an NFT creator and earn royalties from secondary sales of your NFTs, those royalties are treated as <strong>ordinary income</strong>, not capital gains. This is one of the most important distinctions for creators to understand.</p>
+
+                    <p>Royalty income is typically subject to self-employment tax in addition to regular income tax if you are operating as a sole proprietor or independent creator. This means you may owe an additional 15.3% in self-employment tax (12.4% Social Security tax up to the wage base limit, plus 2.9% Medicare tax) on top of your federal income tax rate.</p>
+
+                    <table class="tax-table">
+                        <thead>
+                            <tr>
+                                <th>NFT Activity</th>
+                                <th>Tax Treatment</th>
+                                <th>Reported On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Initial sale by creator</td>
+                                <td>Ordinary income (self-employment)</td>
+                                <td>Schedule C / Schedule SE</td>
+                            </tr>
+                            <tr>
+                                <td>Secondary sale royalties</td>
+                                <td>Ordinary income (self-employment)</td>
+                                <td>Schedule C / Schedule SE</td>
+                            </tr>
+                            <tr>
+                                <td>Buying &amp; selling as collector/trader</td>
+                                <td>Capital gain or loss</td>
+                                <td>Schedule D / Form 8949</td>
+                            </tr>
+                            <tr>
+                                <td>Receiving airdropped NFT</td>
+                                <td>Ordinary income at FMV when received</td>
+                                <td>Schedule 1 (Other Income)</td>
+                            </tr>
+                            <tr>
+                                <td>Free mint (zero cost)</td>
+                                <td>Ordinary income at FMV when received</td>
+                                <td>Schedule 1 (Other Income)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Deductions for NFT Creators</h3>
+                    <p>As a self-employed NFT creator, you can deduct ordinary and necessary business expenses against your royalty and sales income. Common deductible expenses include:</p>
+                    <ul>
+                        <li>Gas fees paid to mint and list your NFTs</li>
+                        <li>Marketplace listing fees and commissions</li>
+                        <li>Software and tools used for creating digital art (Photoshop, Procreate, etc.)</li>
+                        <li>Hardware costs (drawing tablets, computers) used primarily for NFT creation</li>
+                        <li>Marketing and promotion expenses</li>
+                        <li>Home office deduction if you work from a dedicated space</li>
+                    </ul>
+
+                    <h2>Gas Fees and Cost Basis</h2>
+
+                    <p>Gas fees (transaction fees paid to the blockchain network) play a critical role in NFT tax calculations. Here is how gas fees factor into different scenarios:</p>
+
+                    <h3>Gas Fees When Buying an NFT</h3>
+                    <p>Gas fees paid when purchasing an NFT are added to your cost basis. If you buy an NFT for 0.5 ETH and pay 0.01 ETH in gas, your cost basis is the fair market value of 0.51 ETH at the time of the transaction. A higher cost basis reduces your taxable gain when you later sell the NFT.</p>
+
+                    <h3>Gas Fees When Selling an NFT</h3>
+                    <p>Gas fees paid when selling an NFT are treated as a selling expense and reduce your sale proceeds. If you sell an NFT for 2 ETH but pay 0.02 ETH in gas, your net proceeds are the fair market value of 1.98 ETH. Lower proceeds mean a smaller taxable gain (or larger deductible loss).</p>
+
+                    <h3>Gas Fees for Failed Transactions</h3>
+                    <p>Gas fees for failed transactions are a common frustration in the NFT world. Unfortunately, the tax treatment is unclear. Some tax professionals argue that failed transaction gas fees can be treated as a capital loss or an investment expense. Others take a more conservative approach and treat them as non-deductible personal expenses. Document all failed transactions and consult a tax professional for your specific situation.</p>
+
+                    <h3>Gas Fees for Minting (Creators)</h3>
+                    <p>If you are an NFT creator, gas fees paid to mint your NFTs are deductible as a business expense on Schedule C, reducing your self-employment income.</p>
+
+                    <h2>Airdrops and Free Mints</h2>
+
+                    <p>Receiving an NFT through an airdrop or a free mint is a taxable event. The IRS treats airdropped or freely received tokens and NFTs as ordinary income equal to the <strong>fair market value (FMV)</strong> of the asset at the time you receive it (or more precisely, when you gain dominion and control over it).</p>
+
+                    <p><strong>Example:</strong> A project airdrops an NFT to your wallet. At the time of receipt, the floor price for that NFT collection is 0.3 ETH, and ETH is trading at $3,000. The FMV of the NFT is $900. You must report $900 as ordinary income. Your cost basis in the airdropped NFT is $900. If you later sell the NFT for $1,500, you realize a $600 capital gain.</p>
+
+                    <p>For free mints where you only pay gas fees, your cost basis is the gas fee amount. The FMV at the time of minting, minus the gas fee, is taxable as ordinary income. If a free mint NFT has no established market value at the time of minting, a reasonable argument can be made that the income is $0, with a cost basis equal to the gas fee paid.</p>
+
+                    <div class="info-box">
+                        <p><strong>Tip:</strong> Document the fair market value of any airdropped or free-minted NFTs at the time of receipt. Take screenshots of floor prices, marketplace listings, or recent sales data. This documentation is critical if the IRS questions your reported income amount.</p>
+                    </div>
+
+                    <h2>Wash Sale Considerations for NFTs</h2>
+
+                    <p>Starting with the 2025 tax year, the wash sale rule applies to digital assets, including NFTs. Under the wash sale rule, if you sell an NFT at a loss and repurchase a <strong>"substantially identical"</strong> NFT within 30 days before or after the sale, the loss is disallowed for tax purposes.</p>
+
+                    <p>The application of "substantially identical" to NFTs is particularly nuanced because each NFT is, by definition, non-fungible -- unique. This raises the question: can two different NFTs from the same collection be considered substantially identical?</p>
+
+                    <table class="tax-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Wash Sale Risk</th>
+                                <th>Reasoning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sell NFT #1234, rebuy NFT #1234</td>
+                                <td>High - likely wash sale</td>
+                                <td>Exact same asset repurchased</td>
+                            </tr>
+                            <tr>
+                                <td>Sell NFT #1234, buy NFT #5678 from same collection</td>
+                                <td>Moderate - gray area</td>
+                                <td>Different token but same economic exposure to the collection</td>
+                            </tr>
+                            <tr>
+                                <td>Sell NFT from Collection A, buy NFT from Collection B</td>
+                                <td>Low - likely not a wash sale</td>
+                                <td>Different projects, different economic properties</td>
+                            </tr>
+                            <tr>
+                                <td>Sell an NFT, buy the underlying project's fungible token</td>
+                                <td>Low - likely not a wash sale</td>
+                                <td>Different asset types with different rights and properties</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The IRS has not yet issued specific guidance on the "substantially identical" standard for NFTs. Until clearer rules are established, the safest approach is to avoid repurchasing any NFT from the same collection within the 61-day wash sale window if you intend to claim a loss. Consult a tax professional for guidance specific to your situation.</p>
+
+                    <h2>Record Keeping Best Practices</h2>
+
+                    <p>Proper record keeping is essential for accurate NFT tax reporting and for defending your tax positions if audited. Here is what you should track for every NFT transaction:</p>
+
+                    <ul>
+                        <li><strong>Date and time</strong> of every purchase, sale, trade, mint, and airdrop</li>
+                        <li><strong>Transaction hash</strong> (the blockchain transaction ID) for each event</li>
+                        <li><strong>NFT identifier</strong> -- the collection name, token ID, and contract address</li>
+                        <li><strong>Amount paid or received</strong> in both crypto and USD value at the time of the transaction</li>
+                        <li><strong>Gas fees paid</strong> for each transaction, in both crypto and USD</li>
+                        <li><strong>Marketplace used</strong> (OpenSea, Blur, Magic Eden, etc.) and any platform-specific fees</li>
+                        <li><strong>Fair market value documentation</strong> for airdrops and free mints -- screenshots of floor prices, recent sales, marketplace data</li>
+                        <li><strong>Wallet addresses</strong> involved in each transaction</li>
+                        <li><strong>Holding period calculations</strong> -- date acquired vs. date disposed to determine short-term or long-term treatment</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <p><strong>Pro tip:</strong> Export transaction histories from your wallets and marketplaces regularly. Blockchain data is permanent, but marketplace interfaces and APIs can change. Keeping your own records ensures you always have access to the information you need.</p>
+                    </div>
+
+                    <h2>Reporting NFT Taxes: Schedule D and Form 8949</h2>
+
+                    <p>NFT capital gains and losses are reported on <strong>Form 8949</strong> and summarized on <strong>Schedule D</strong> of your federal tax return (Form 1040). Here is a step-by-step overview of the process.</p>
+
+                    <h3>Step 1: Gather All Transaction Data</h3>
+                    <p>Compile a complete list of every NFT disposal (sale, trade, or other disposition) during the 2026 tax year. For each transaction, you need: the asset description, date acquired, date sold or disposed, proceeds (sale price minus selling expenses), and cost basis (purchase price plus buying expenses including gas fees).</p>
+
+                    <h3>Step 2: Classify Each Transaction</h3>
+                    <p>Separate your transactions into short-term (held one year or less) and long-term (held more than one year). Short-term transactions go on Form 8949 Part I, and long-term transactions go on Part II.</p>
+
+                    <h3>Step 3: Fill Out Form 8949</h3>
+                    <p>For each transaction, enter the following in the appropriate columns:</p>
+                    <ul>
+                        <li><strong>Column (a):</strong> Description of property -- for example, "1x Bored Ape #7891 (NFT)"</li>
+                        <li><strong>Column (b):</strong> Date acquired</li>
+                        <li><strong>Column (c):</strong> Date sold or disposed</li>
+                        <li><strong>Column (d):</strong> Proceeds (sale price minus selling fees and gas)</li>
+                        <li><strong>Column (e):</strong> Cost or other basis (purchase price plus gas and fees)</li>
+                        <li><strong>Column (h):</strong> Gain or loss (Column d minus Column e)</li>
+                    </ul>
+
+                    <h3>Step 4: Transfer Totals to Schedule D</h3>
+                    <p>Transfer the totals from Form 8949 to the corresponding lines on Schedule D. Short-term totals go on Part I of Schedule D, and long-term totals go on Part II. Schedule D calculates your net capital gain or loss for the year.</p>
+
+                    <h3>Step 5: Report Creator Income Separately</h3>
+                    <p>If you earned income as an NFT creator (initial sales or royalties), report that income on <strong>Schedule C</strong> (Profit or Loss from Business). You will also need to file <strong>Schedule SE</strong> to calculate self-employment tax. Airdrop income for non-business taxpayers is typically reported on <strong>Schedule 1, Line 8z</strong> (Other Income).</p>
+
+                    <table class="tax-table">
+                        <thead>
+                            <tr>
+                                <th>Form</th>
+                                <th>Purpose</th>
+                                <th>What Goes Here</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Form 8949</td>
+                                <td>Report individual capital gains/losses</td>
+                                <td>Every NFT sale, trade, or disposition</td>
+                            </tr>
+                            <tr>
+                                <td>Schedule D</td>
+                                <td>Summarize capital gains/losses</td>
+                                <td>Totals from Form 8949</td>
+                            </tr>
+                            <tr>
+                                <td>Schedule C</td>
+                                <td>Report business income/expenses</td>
+                                <td>Creator sales, royalties, and deductions</td>
+                            </tr>
+                            <tr>
+                                <td>Schedule SE</td>
+                                <td>Calculate self-employment tax</td>
+                                <td>Net self-employment income from Schedule C</td>
+                            </tr>
+                            <tr>
+                                <td>Schedule 1, Line 8z</td>
+                                <td>Report other income</td>
+                                <td>Airdrops, free mints (if not business income)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Donating NFTs to Charity</h2>
+
+                    <p>Donating an NFT to a qualified charitable organization can provide a tax deduction. If you have held the NFT for more than one year, you can generally deduct the fair market value of the NFT without paying capital gains tax on the appreciation. If you have held it for one year or less, the deduction is generally limited to your cost basis.</p>
+
+                    <p>However, because NFTs are classified as property (and potentially collectibles), donations of NFTs valued at more than $5,000 require a qualified appraisal. The appraisal must be conducted by a qualified appraiser and attached to your tax return. This can be a complex and costly process, so it is typically only worthwhile for high-value NFTs.</p>
+
+                    <h2>Gifting NFTs</h2>
+
+                    <p>Gifting an NFT to another person is generally not a taxable event for the giver, as long as the total value of gifts to any single individual does not exceed the annual gift tax exclusion ($18,000 for 2026). The recipient takes on the giver's cost basis and holding period. When the recipient eventually sells the NFT, they calculate their gain or loss based on the original cost basis.</p>
+
+                    <p>If you gift an NFT worth more than $18,000 to a single recipient, you must file a gift tax return (Form 709), though you likely will not owe gift tax unless you have exceeded your lifetime gift tax exemption.</p>
+
+                    <h2>Common Mistakes to Avoid</h2>
+
+                    <h3>1. Forgetting to Report Crypto-to-NFT Purchases</h3>
+                    <p>When you buy an NFT with ETH or another cryptocurrency, you must report the disposal of the crypto as a taxable event. Many taxpayers forget this step and only report the eventual sale of the NFT.</p>
+
+                    <h3>2. Ignoring Airdrop Income</h3>
+                    <p>Airdropped NFTs are taxable as ordinary income at the time of receipt. Even if you did not ask for the airdrop and never sell the NFT, you still owe tax on the fair market value at receipt.</p>
+
+                    <h3>3. Not Including Gas Fees in Cost Basis</h3>
+                    <p>Gas fees can be substantial, especially during periods of high network congestion. Failing to include gas fees in your cost basis means you will overstate your gains and overpay taxes.</p>
+
+                    <h3>4. Assuming All NFTs Are Non-Collectibles</h3>
+                    <p>The collectibles classification can significantly impact your long-term capital gains rate (28% vs. 15% or 20%). Review IRS Notice 2023-27 and consult a tax professional to determine whether your NFTs may be classified as collectibles.</p>
+
+                    <h3>5. Poor Record Keeping</h3>
+                    <p>NFT transactions can be complex, involving multiple wallets, chains, and marketplaces. Without meticulous records, accurately calculating gains, losses, and income becomes nearly impossible.</p>
+
+                    <div class="cta-box">
+                        <h3>Calculate Your NFT Tax Liability</h3>
+                        <p>Use our free crypto tax calculator to estimate capital gains, losses, and income from your NFT transactions.</p>
+                        <a href="/#calculator" class="cta-btn">Open the Calculator</a>
+                    </div>
+
+                    <h2>Final Thoughts</h2>
+
+                    <p>NFT taxation in 2026 is multifaceted, touching on capital gains, ordinary income, self-employment tax, collectibles rules, and wash sale regulations. Whether you are a collector buying and flipping NFTs, a creator earning royalties, or simply someone who received an airdrop, understanding your tax obligations is critical to staying compliant and avoiding penalties.</p>
+
+                    <p>The key takeaways are: buying an NFT with crypto triggers a taxable event on the crypto, selling or trading NFTs generates capital gains or losses, creator royalties are ordinary self-employment income, gas fees should always be factored into your cost basis, airdrops and free mints are taxable as ordinary income, and the wash sale rule now applies to digital assets including NFTs. Keep thorough records, use the correct tax forms, and consider consulting a tax professional if your NFT activity is complex.</p>
+
+                    <p>This guide is for informational purposes only and does not constitute tax, legal, or financial advice. Tax laws are complex and subject to change. Consult a qualified tax professional for advice specific to your situation.</p>
+                </div>
+
+                <!-- Ad Slot 2 -->
+                <div class="ad-slot">
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8767713037568144"
+                        data-ad-slot="7000000002"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CryptoTaxCalc.org. All rights reserved.</p>
+            <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--muted);">This content is for informational purposes only and does not constitute tax advice. Consult a qualified tax professional.</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#calculator">Calculator</a>
+                <a href="/#blog">Blog</a>
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms of Service</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

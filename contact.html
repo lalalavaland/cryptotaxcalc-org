@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | CryptoTaxCalc.org</title>
+    <meta name="description" content="Contact CryptoTaxCalc.org. Have questions about our free crypto tax calculator or our educational content? Reach out to us via email at contact@cryptotaxcalc.org.">
+    <link rel="canonical" href="https://cryptotaxcalc.org/contact.html">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contact Us | CryptoTaxCalc.org">
+    <meta property="og:description" content="Contact CryptoTaxCalc.org. Have questions about our crypto tax calculator? Reach out to us.">
+    <meta property="og:url" content="https://cryptotaxcalc.org/contact.html">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #fff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --muted: #64748b;
+            --accent: #7c3aed;
+            --accent-light: #ede9fe;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .article-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Article */
+        .article-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--muted);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        .article-header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Ad slot */
+        .ad-slot {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 2rem auto;
+            max-width: 728px;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Article content */
+        .article-body {
+            padding-bottom: 3rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .article-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 2rem 0 0.75rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.15rem;
+            color: var(--text);
+        }
+
+        .article-body ul,
+        .article-body ol {
+            margin-bottom: 1.15rem;
+            padding-left: 1.75rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body strong {
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .info-box strong {
+            color: var(--accent);
+        }
+
+        /* Contact form */
+        .contact-form {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--text);
+            background: var(--bg);
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-light);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.85rem 2rem;
+            background: var(--accent);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-family: inherit;
+        }
+
+        .form-btn:hover {
+            opacity: 0.9;
+        }
+
+        .email-direct {
+            background: var(--surface);
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .email-direct h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .email-direct p {
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .email-direct a.email-link {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        footer .footer-links {
+            margin-top: 0.75rem;
+        }
+
+        footer .footer-links a {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin: 0 0.75rem;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-header h1 {
+                font-size: 1.65rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8767713037568144"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <span class="logo-icon">CT</span>
+                    CryptoTaxCalc
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/#calculator">Calculator</a></li>
+                    <li><a href="/#features">Features</a></li>
+                    <li><a href="/#blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <div class="article-container">
+                <div class="article-header">
+                    <div class="breadcrumb">
+                        <a href="/">Home</a> &rsaquo; Contact
+                    </div>
+                    <h1>Contact Us</h1>
+                    <div class="article-meta">We would love to hear from you</div>
+                </div>
+
+                <!-- Ad Slot -->
+                <div class="ad-slot">
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8767713037568144"
+                        data-ad-slot="6000000001"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+
+                <div class="article-body">
+                    <p>Have a question about our crypto tax calculator, found an error in one of our guides, or just want to share feedback? We are happy to help. Use the form below or email us directly.</p>
+
+                    <div class="email-direct">
+                        <h3>Email Us Directly</h3>
+                        <p>For the fastest response, send us an email at:</p>
+                        <a href="mailto:contact@cryptotaxcalc.org" class="email-link">contact@cryptotaxcalc.org</a>
+                    </div>
+
+                    <h2>Send a Message</h2>
+                    <p>Fill out the form below and we will get back to you as soon as possible. All fields are required.</p>
+
+                    <form class="contact-form" action="mailto:contact@cryptotaxcalc.org" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="Calculator Question">Calculator Question</option>
+                                <option value="Content Feedback">Content Feedback</option>
+                                <option value="Bug Report">Bug Report</option>
+                                <option value="Feature Request">Feature Request</option>
+                                <option value="Partnership Inquiry">Partnership Inquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-btn">Send Message</button>
+                    </form>
+
+                    <div class="info-box">
+                        <p><strong>Please note:</strong> We are not tax advisors. While we are happy to answer questions about how our calculator works or clarify information in our guides, we cannot provide personalized tax advice. For questions about your specific tax situation, please consult a qualified tax professional or CPA with experience in cryptocurrency taxation.</p>
+                    </div>
+
+                    <h2>Response Time</h2>
+                    <p>We typically respond to emails within 1-2 business days. If your inquiry is time-sensitive, please indicate that in the subject line of your email.</p>
+
+                    <h2>Other Resources</h2>
+                    <p>Before reaching out, you may find the answer to your question in one of our guides:</p>
+                    <ul>
+                        <li><a href="/blog/crypto-taxes-complete-guide-2026.html">Crypto Taxes: A Complete Guide for 2026</a> -- covers IRS rules, taxable events, cost basis methods, and required forms</li>
+                        <li><a href="/blog/crypto-tax-loss-harvesting-guide.html">Tax Loss Harvesting for Crypto</a> -- strategies for offsetting gains with losses, including the 2026 wash sale rules</li>
+                        <li><a href="/blog/defi-taxes-explained-2026.html">DeFi Taxes Explained</a> -- how staking, lending, liquidity pools, and yield farming are taxed</li>
+                        <li><a href="/about.html">About CryptoTaxCalc.org</a> -- learn more about our mission and how the calculator works</li>
+                    </ul>
+                </div>
+
+                <!-- Ad Slot 2 -->
+                <div class="ad-slot">
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-8767713037568144"
+                        data-ad-slot="6000000002"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CryptoTaxCalc.org. All rights reserved.</p>
+            <p style="margin-top:0.5rem; font-size:0.8rem; color:var(--muted);">This calculator provides estimates only and does not constitute tax advice. Consult a qualified tax professional for your specific situation.</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/#calculator">Calculator</a>
+                <a href="/#blog">Blog</a>
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-service.html">Terms of Service</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
